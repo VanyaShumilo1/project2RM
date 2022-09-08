@@ -1,0 +1,82 @@
+html, body {
+    /* overflow-x: hidden; */
+    position: relative;
+}
+
+.dashboard {
+    margin-top: 50px;
+}
+
+.dashboard__wrappepr {
+    border: 2px solid rgb(136, 135, 135);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr) 1fr;
+    border-bottom: 1px solid rgb(77, 76, 76);
+    padding-left: 10px;
+}
+
+.changeButton {
+    background: none;
+    border: none;
+    color: inherit;
+    outline: none;
+}
+
+.popup {
+    top: -100%;
+    transition: 0.5s all;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.poput__content {
+    background: rgb(45, 45, 45);
+    width: 300px;
+    padding: 40px;
+    border: 3px solid #4B72C2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    position: relative;
+}
+
+.popup__close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.popup__oldPhone, .popup label {
+    text-align: center;
+}
+
+.popup__oldPhone {
+    margin-bottom: 15px;
+}
+
+.poput__content button {
+    width: 100%;
+}
+
+.popup__input {
+    margin-top: 15px;
+    padding: 10px;
+    background: none;
+    outline: none;
+    border: 2px solid #4B72C2;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}

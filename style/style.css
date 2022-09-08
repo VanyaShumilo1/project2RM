@@ -1,0 +1,201 @@
+* {
+    font-family: 'Poppins';
+    transition: 0.3s all;
+}
+
+input,
+label {
+    display: block;
+}
+
+label {
+    margin: 0;
+    padding: 0;
+}
+
+svg {
+    display: block;
+}
+
+body {
+    background: #242424;
+    color: #7F7F7F;
+}
+
+.input.error {
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.error-text {
+    color: red;
+}
+
+.main {
+    margin-top: 108px;
+    padding-bottom: 50px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+    padding: 0 40px;
+}
+
+.title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+}
+
+.subtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #7F7F7F;
+    max-width: 625px;
+
+}
+
+.form {
+    margin-top: 60px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.input {
+    background: none;
+    border: 1px solid #3D3D3D;
+    border-radius: 4px;
+    padding: 12px 20px;
+    color: #fff;
+    transition: 0.2s all;
+}
+
+.input:focus {
+    text-indent: 10px;
+}
+
+.input:focus {
+    outline: 1px solid #4B72C2;
+}
+
+.confirm {
+    position: relative;
+    padding-left: 35px;
+}
+
+.checkbox {
+    appearance: none;
+    position: absolute;
+}
+
+.label1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    z-index: 1;
+    background: #242424;
+    border: 1px solid #3D3D3D;
+    border-radius: 4px;
+}
+
+.label1::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    height: 24px;
+    width: 24px;
+    z-index: 2;
+    background: url(../img/check.svg) no-repeat;
+    background-size: 21px 21px;
+    opacity: 0;
+    transition: 0.3s all;
+}
+
+.checkbox:checked+.label1::after {
+    opacity: 1;
+}
+
+.button {
+    margin-top: 50px;
+    background: #4B72C2;
+    border-radius: 4px;
+    padding: 12px 64px;
+    border: none;
+    font-size: 16px;
+    line-height: 24px;
+    transition: 0.5s all;
+    color: #fff;
+}
+
+.errors {
+    margin-top: 20px;
+    color: #ff0000;
+}
+
+.button:hover {
+    background: #3362c0;
+}
+
+.button:focus,
+.button:active {
+    outline: #3c64b4;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background: #3D3D3D;
+    margin-top: 50px;
+}
+
+.main__text {
+    margin-top: 30px;
+    display: flex;
+    gap: 5px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.link:hover svg {
+    position: relative;
+    animation: 0.3s ease-in link_animation;
+
+}
+
+@keyframes link_animation {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+

@@ -1,0 +1,28 @@
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+a {
+    color: inherit;
+}
+
+.header__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header__links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header__username {
+    color: rgb(214, 210, 255);
+}
