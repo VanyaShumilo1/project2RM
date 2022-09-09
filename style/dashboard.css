@@ -36,6 +36,7 @@ html, body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    display: none;
 }
 
 .poput__content {
@@ -58,11 +59,11 @@ html, body {
     color: #ff0000;
 }
 
-.popup__oldPhone, .popup label {
+.popup__oldContent, .popup label {
     text-align: center;
 }
 
-.popup__oldPhone {
+.popup__oldContent {
     margin-bottom: 15px;
 }
 
@@ -79,4 +80,5 @@ html, body {
     border-radius: 10px;
     color: #fff;
     text-align: center;
+    width: 90%;
 }

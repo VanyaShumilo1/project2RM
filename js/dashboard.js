@@ -20,7 +20,8 @@ function render(id, status, username, phone, email, photo) {
     </div>
     <div class="row">
         <div class="column">Email</div>
-        <div class="column">${email}</div>
+        <div class="column columnEmail">${email}</div>
+        <button type="button" class="column changeButton changeEmailButton">Change</button>
     </div>
     <div class="row">
         <div class="column">Photo</div>
@@ -29,6 +30,7 @@ function render(id, status, username, phone, email, photo) {
 
     `
 }
+
 
 function validatePhone(phone) {
     const phoneREGEX = /^[\d\+][\d\(\)\ -]{4,14}\d$/
@@ -42,6 +44,7 @@ function validatePhone(phone) {
         return true
     }
 }
+
 
 function validateEmail(email) {
     const emailREGEX = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i
@@ -57,8 +60,6 @@ function validateEmail(email) {
 }
 
 
-
-
 $(document).ready(function () {
 
     $.ajax({
@@ -71,13 +72,20 @@ $(document).ready(function () {
 
         //popup buttons
         $('.changePhoneButton').on('click', function () {
-            $('.popup').css('top', '0')
+            $('.popup__changePhone').css('display', 'block')
+            $('.popup__changePhone').css('top', '0')
+        })
+
+        $('.changeEmailButton').on('click', function () {
+            $('.popup__changeEmail').css('display', 'block')
+            $('.popup__changeEmail').css('top', '0')
         })
 
         $('.popup__close').on('click', function () {
             $('.popup').css('top', '-100%')
         })
     })
+
 
     // Change number
     $('.changePhoneSubmit').on('click', function (e) {
@@ -96,6 +104,29 @@ $(document).ready(function () {
                     $('.popup__input-phone').val('')
                     $('.columnPhone').text(phone)
                     alert(`Phone number changed to ${phone}`)
+                }
+            })
+        }
+    })
+
+
+    //Change email
+    $('.changeEmailSubmit').on('click', function (e) {
+        e.preventDefault()
+        const email = $('.popup__input-email').val()
+
+        if (validateEmail(email)) {
+            console.log('email valid')
+            $.ajax({
+                url: '../scripts/dashboard/handlerChangeEmail.php',
+                type: 'POST',
+                cache: false,
+                data: { 'newEmail': email },
+                success: function (data) {
+                    $('.popup').css('top', '-100%')
+                    $('.popup__input-email').val('')
+                    $('.columnEmail').text(email)
+                    alert(`Email number changed to ${email}`)
                 }
             })
         }

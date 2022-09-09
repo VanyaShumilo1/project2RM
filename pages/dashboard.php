@@ -25,11 +25,11 @@ require '../scripts/paths.php'
 <body>
 
 
-    <div class="popup chanePhone">
+    <div class="popup popup__changePhone">
         <div class="poput__content">
             <div class="popup__close">X</div>
-            <form enctype="multipart/form-data" class="chanePhoneForm">
-                <div class="popup__oldPhone">Old Phone: <?php echo $_SESSION['logged user']->phone ?></div>
+            <form enctype="multipart/form-data" class="changeFrom chanePhoneForm">
+                <div class="popup__oldContent popup__oldPhone">Old Phone: <?php echo $_SESSION['logged user']->phone ?></div>
                 <label for="popup__input-phone">Change Phone</label>
                 <input type="tel" class="popup__input popup__input-phone" id="popup__input-phone">
                 <div class="errors"></div>
@@ -38,7 +38,18 @@ require '../scripts/paths.php'
         </div>
     </div>
 
-
+    <div class="popup popup__changeEmail">
+        <div class="poput__content">
+            <div class="popup__close">X</div>
+            <form enctype="multipart/form-data" class="chaneEmailForm">
+                <div class="popup__oldContent popup__oldEmail">Old Email: <?php echo $_SESSION['logged user']->email ?></div>
+                <label for="popup__input-email">Change Email</label>
+                <input type="tel" class="popup__input popup__input-email" id="popup__input-email">
+                <div class="errors"></div>
+                <button type="button" class="button changeEmailSubmit">Change</button>
+            </form>
+        </div>
+    </div>
 
 
     <header class="header">
