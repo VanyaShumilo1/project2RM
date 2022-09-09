@@ -31,7 +31,7 @@ html, body {
 }
 
 .popup {
-    top: -100%;
+    top: -200%;
     transition: 0.5s all;
     position: absolute;
     left: 50%;
@@ -63,6 +63,10 @@ html, body {
     text-align: center;
 }
 
+label {
+    margin-bottom: 10px;
+}
+
 .popup__oldContent {
     margin-bottom: 15px;
 }
@@ -72,7 +76,7 @@ html, body {
 }
 
 .popup__input {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     padding: 10px;
     background: none;
     outline: none;
@@ -81,4 +85,10 @@ html, body {
     color: #fff;
     text-align: center;
     width: 90%;
+}
+
+.left {
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    margin-top: 15px;
 }

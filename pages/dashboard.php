@@ -28,8 +28,8 @@ require '../scripts/paths.php'
     <div class="popup popup__changePhone">
         <div class="poput__content">
             <div class="popup__close">X</div>
-            <form enctype="multipart/form-data" class="changeFrom chanePhoneForm">
-                <div class="popup__oldContent popup__oldPhone">Old Phone: <?php echo $_SESSION['logged user']->phone ?></div>
+            <form enctype="multipart/form-data" class="changeFrom changePhoneForm">
+                <div class="popup__oldContent popup__oldPhone">Current Phone: <?php echo $_SESSION['logged user']->phone ?></div>
                 <label for="popup__input-phone">Change Phone</label>
                 <input type="tel" class="popup__input popup__input-phone" id="popup__input-phone">
                 <div class="errors"></div>
@@ -41,12 +41,33 @@ require '../scripts/paths.php'
     <div class="popup popup__changeEmail">
         <div class="poput__content">
             <div class="popup__close">X</div>
-            <form enctype="multipart/form-data" class="chaneEmailForm">
-                <div class="popup__oldContent popup__oldEmail">Old Email: <?php echo $_SESSION['logged user']->email ?></div>
+            <form enctype="multipart/form-data" class="changeEmailForm">
+                <div class="popup__oldContent popup__oldEmail">Current Email: <?php echo $_SESSION['logged user']->email ?></div>
                 <label for="popup__input-email">Change Email</label>
                 <input type="tel" class="popup__input popup__input-email" id="popup__input-email">
                 <div class="errors"></div>
                 <button type="button" class="button changeEmailSubmit">Change</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup popup__changePassword">
+        <div class="poput__content">
+            <div class="popup__close">X</div>
+            <form enctype="multipart/form-data" class="changePasswordForm">
+
+                <label for="popup__input-oldPassword" class="left">Current password</label>
+                <input type="password" class="popup__input popup__input-oldPassword" id="popup__input-oldPassword"> 
+
+                <label for="popup__input-newPassword" class="left">New password</label>
+                <input type="password" class="popup__input popup__input-newPassword" id="popup__input-newPassword">
+                
+                <label for="popup__input-newConfirmPassword" class="left">Confirm new password</label>
+                <input type="password" class="popup__input popup__input-newConfirmPassword" id="popup__input-newConfirmPassword">
+                
+                <div class="errors"></div>
+                
+                <button type="button" class="button changePasswordSubmit">Change</button>
             </form>
         </div>
     </div>
