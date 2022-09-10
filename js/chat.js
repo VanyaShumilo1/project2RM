@@ -24,7 +24,8 @@ function sendMessage() {
             type: 'POST',
             data: { 'message': message },
             success: function (message) {
-                $('.chat__messages').append(renderMessages(message['user'], message['message'], message['time'], message['photo']))
+                console.log(message)
+                $('.chat__messages').append(renderMessages(message['username'], message['message'], message['time'], message['photo']))
                 $('.chat__input').val('')
                 element = $('.chat__messages')
                 element.animate({
@@ -45,7 +46,7 @@ $(document).ready(function () {
             for (i in data) {
                 // console.log(message)
                 message = data[i]
-                $('.chat__messages').append(renderMessages(message['user'], message['message'], message['time'], message['photo']))
+                $('.chat__messages').append(renderMessages(message['username'], message['message'], message['time'], message['photo']))
                 chatMessages = document.querySelector('.chat__messages')
                 chatMessages.scrollTop = chatMessages.scrollHeight
             }
