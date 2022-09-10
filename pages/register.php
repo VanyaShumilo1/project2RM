@@ -52,7 +52,7 @@ require '../scripts/paths.php';
             <div class="line"></div>
 
             <div class="main__text">
-                Already have an account? <a class="link" href="<?php echo $path['login'] ?>">Log in
+                Already have an account? <a class="link" href="<?php echo $path['login']; ?>">Log in
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 9H15" stroke="#4B72C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M9.75 3.75L15 9L9.75 14.25" stroke="#4B72C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
