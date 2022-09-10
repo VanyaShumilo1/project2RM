@@ -25,7 +25,8 @@ function render(id, status, username, phone, email, photo) {
     </div>
     <div class="row">
         <div class="column">Photo</div>
-        <div class="column">${photo}</div>
+        <img class="column-img" src="../media/${photo}" alt="${photo}">
+        <button type="button" class="column changeButton changePhotoButton">Change</button>
     </div>
     <div class="row">
         <div class="column">Password</div>
@@ -83,8 +84,9 @@ function validatePassword(password, confirmPassword) {
 
 $(document).ready(function () {
 
+    // render dashboard
     $.ajax({
-        url: '../scripts/userData.php',
+        url: '../scripts/userData.php', //get user data from DB
         dataType: 'json',
         success: function (data) {
             $('.dashboard__wrappepr').html(render(data.id, data.status, data.username, data.phone, data.email, data.photo))
@@ -107,13 +109,18 @@ $(document).ready(function () {
             $('.popup__changePassword').css('top', '0')
         })
 
+        $('.changePhotoButton').on('click', function () {
+            $('.popup__changePhoto').css('display', 'block')
+            $('.popup__changePhoto').css('top', '0')
+        })
+
         $('.popup__close').on('click', function () {
             $('.popup').css('top', '-200%')
         })
     })
 
 
-    // Change number
+    // Change phone number
     $('.changePhoneSubmit').on('click', function (e) {
         e.preventDefault()
         const phone = $('.popup__input-phone').val();
@@ -166,7 +173,6 @@ $(document).ready(function () {
         const newPassword = $('.popup__input-newPassword').val()
         const confirmNewPassword = $('.popup__input-newConfirmPassword').val()
 
-
         if (validatePassword(newPassword, confirmNewPassword)) {
             $.ajax({
                 url: '../scripts/dashboard/handlerChangePassword.php',
@@ -192,6 +198,69 @@ $(document).ready(function () {
         }
     })
 
+
+    //Change photo
+
+    const photoPreviewNode = document.querySelector('.popup__photoPreview')
+    const inputPhoto = document.querySelector('.popup__input-AddPhoto')
+
+
+    function renderImg(file) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            photoPreviewNode.innerHTML = `<img src="${e.target.result}" alt="photo">`
+        }
+        reader.onerror = function (e) {
+            alert('error')
+        }
+        reader.readAsDataURL(file.files[0])
+    }
+
+
+    function validateImage(file) {
+        const errorsNode = $('.errors')
+        if (!['image/png', 'image/jpg', 'image/jpeg'].includes(file.type)) {
+            console.log(file.type + " - type")
+            console.log('only images')
+            errorsNode.text('Only images (jpg/jpeg or png)')
+            return false
+        } else if (file.size > 2 * 1024 * 1024) {
+            console.log('max photo size 2 mb')
+            errorsNode.text('Max photo size 2 mb')
+            return false
+        } else {
+            errorsNode.text('')
+            console.log('valid')
+            return true
+        }
+    }
+
+    
+    inputPhoto.addEventListener('change', () => {
+        if (validateImage(inputPhoto.files[0])) {
+            renderImg(inputPhoto)
+        }
+    })
+
+
+    $('.changePhotoForm').on('submit', function (e) {
+        e.preventDefault()
+        if (validateImage(inputPhoto.files[0])) {
+
+            $.ajax({
+                url: '../scripts/dashboard/handlerChangePhoto.php',
+                method: 'POST',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    $('.popup__changePhoto').css('top', '-200%')
+                    $('.column-img').attr('src', `../media/${inputPhoto.files[0].name}`)
+                }
+            })
+        }
+    })
 
 })
 

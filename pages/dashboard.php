@@ -26,7 +26,7 @@ require '../scripts/paths.php'
 
 
     <div class="popup popup__changePhone">
-        <div class="poput__content">
+        <div class="popup__content">
             <div class="popup__close">X</div>
             <form enctype="multipart/form-data" class="changeFrom changePhoneForm">
                 <div class="popup__oldContent popup__oldPhone">Current Phone: <?php echo $_SESSION['logged user']->phone ?></div>
@@ -39,7 +39,7 @@ require '../scripts/paths.php'
     </div>
 
     <div class="popup popup__changeEmail">
-        <div class="poput__content">
+        <div class="popup__content">
             <div class="popup__close">X</div>
             <form enctype="multipart/form-data" class="changeEmailForm">
                 <div class="popup__oldContent popup__oldEmail">Current Email: <?php echo $_SESSION['logged user']->email ?></div>
@@ -52,7 +52,7 @@ require '../scripts/paths.php'
     </div>
 
     <div class="popup popup__changePassword">
-        <div class="poput__content">
+        <div class="popup__content">
             <div class="popup__close">X</div>
             <form enctype="multipart/form-data" class="changePasswordForm">
 
@@ -68,6 +68,19 @@ require '../scripts/paths.php'
                 <div class="errors"></div>
                 
                 <button type="button" class="button changePasswordSubmit">Change</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup popup__changePhoto">
+        <div class="popup__content">
+            <div class="popup__close">X</div>
+            <form enctype="multipart/form-data" class="changeFrom changePhotoForm">
+                <div class="popup__photoPreview"></div>
+                <label for="addPhoto" class="addPhotoLabel">Add Photo</label>
+                <input type="file" name="addPhoto" class="popup__input-AddPhoto" id="addPhoto">
+                <div class="errors"></div>
+                <button type="submit" class="button changePhotoSubmit">Change</button>
             </form>
         </div>
     </div>
