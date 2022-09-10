@@ -34,7 +34,7 @@ require 'scripts/paths.php'
                         <?php
                         if (isset($_SESSION['logged user'])) {
                             echo <<< HTML
-                             <li class="header__list-item"><a href="chat.php">Chat</a></li>
+                             <li class="header__list-item"><a href="pages/chat.php">Chat</a></li>
 HTML;
                         }
                         ?>

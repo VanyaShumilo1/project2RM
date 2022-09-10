@@ -18,7 +18,7 @@ require '../scripts/paths.php'
     <link rel="stylesheet" href="../libs/_bootstrap-reboot.min.css">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/mainPage.css">
-    <title>MAIN</title>
+    <title>Login</title>
 </head>
 
 <body>

@@ -235,7 +235,7 @@ $(document).ready(function () {
         }
     }
 
-    
+
     inputPhoto.addEventListener('change', () => {
         if (validateImage(inputPhoto.files[0])) {
             renderImg(inputPhoto)
