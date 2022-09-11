@@ -18,6 +18,10 @@ require 'scripts/paths.php'
     <link rel="stylesheet" href="libs/_bootstrap-reboot.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/mainPage.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <title>MAIN</title>
 </head>
 
@@ -38,7 +42,7 @@ require 'scripts/paths.php'
 HTML;
                         }
                         ?>
-                        
+
                     </ul>
                 </div>
                 <div class="header__item">
@@ -65,6 +69,83 @@ HTML;
         </div>
     </header>
 
+    <section class="feed">
+        <div class="container">
+            <h1 class="title">Feed</h1>
+            <div class="feed__wrapper">
+
+                <div class="post">
+                    <div class="post__header">
+                        <div class="post__userPhoto">PHOTO</div>
+                        <div class="post__username">USERNAME</div>
+                    </div>
+                    <div class="post__body">
+                        <div class="post__photo"></div>
+                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
+                    </div>
+                    <div class="post__footer"></div>
+                </div>
+
+                <div class="post">
+                    <div class="post__header">
+                        <div class="post__userPhoto">PHOTO</div>
+                        <div class="post__username">USERNAME</div>
+                    </div>
+                    <div class="post__body">
+                        <div class="post__photo"></div>
+                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
+                    </div>
+                    <div class="post__footer"></div>
+                </div>
+
+                <div class="post">
+                    <div class="post__header">
+                        <div class="post__userPhoto">PHOTO</div>
+                        <div class="post__username">USERNAME</div>
+                    </div>
+                    <div class="post__body">
+                        <div class="post__photo">
+                            <img src="/media/audi.jpg" alt="">
+                        </div>
+                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
+                    </div>
+                    <div class="post__footer"></div>
+                </div>
+
+                <div class="post">
+                    <div class="post__header">
+                        <div class="post__userPhoto">PHOTO</div>
+                        <div class="post__username">USERNAME</div>
+                    </div>
+                    <div class="post__body">
+                        <div class="post__photo">
+                            <img src="/media/bmw.jpeg" alt="">
+                            <img src="/media/bmw.jpeg" alt="">
+                            <img src="/media/bmw.jpeg" alt="">
+                        </div>
+                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
+                    </div>
+                    <div class="post__footer"></div>
+                </div>
+
+                <div class="post">
+                    <div class="post__header">
+                        <div class="post__userPhoto">PHOTO</div>
+                        <div class="post__username">USERNAME</div>
+                    </div>
+                    <div class="post__body">
+                        <div class="post__photo"></div>
+                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
+                    </div>
+                    <div class="post__footer"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="../js/feed.js"></script>
 </body>
 
 </html>
