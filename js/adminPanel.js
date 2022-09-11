@@ -54,6 +54,8 @@ $(document).ready(function () {
                 success: function (data) {
                     if (data == 'success') {
                         let element = $(`.dashboard__wrappepr[data-id=${id}]`).remove()
+                    } else {
+                        alert(data)
                     }
                 }
             })
