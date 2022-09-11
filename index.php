@@ -21,7 +21,7 @@ require 'scripts/paths.php'
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
     <title>MAIN</title>
 </head>
 
@@ -119,9 +119,27 @@ HTML;
                     </div>
                     <div class="post__body">
                         <div class="post__photo">
-                            <img src="/media/bmw.jpeg" alt="">
-                            <img src="/media/bmw.jpeg" alt="">
-                            <img src="/media/bmw.jpeg" alt="">
+
+
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide"><img src="/media/bmw.jpeg" alt=""></div>
+                                    <div class="swiper-slide"><img src="/media/bmw.jpeg" alt=""></div>
+                                    <div class="swiper-slide"><img src="/media/bmw.jpeg" alt=""></div>
+
+                                </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+
+
+
+
                         </div>
                         <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
                     </div>
@@ -144,8 +162,10 @@ HTML;
         </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="../js/feed.js"></script>
+    <script src="/js/feed.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
