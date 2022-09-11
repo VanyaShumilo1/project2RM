@@ -3,7 +3,7 @@ function render(id, status, username, phone, email, photo) {
     
     <div class="row">
         <div class="column">ID</div>
-        <div class="column">${id}</div>
+        <div class="column column-id">${id}</div>
     </div>
     <div class="row">
         <div class="column">Status</div>

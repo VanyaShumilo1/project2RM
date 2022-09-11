@@ -54,7 +54,6 @@ $(document).ready(function () {
     })
 
 
-
     //send message
     $('.chat__button-send').on('click', function (e) {
         e.preventDefault()

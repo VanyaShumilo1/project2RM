@@ -7,7 +7,7 @@ $path = array(
     'login' => 'login.php',
     'chat' => 'chat.php',
     'dashboard' => 'dashboard.php',
-    'admin' => 'admin.php'
+    'adminPanel' => 'adminPanel.php'
 );
 
 ?>

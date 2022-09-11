@@ -20,6 +20,7 @@ require '../scripts/paths.php'
     <link rel="stylesheet" href="../style/mainPage.css">
     <link rel="stylesheet" href="../style/dashboard.css">
     <link rel="stylesheet" href="../style/chat.css">
+    <link rel="stylesheet" href="../style/adminPanel.css">
     <title>Chat</title>
 </head>
 
@@ -38,15 +39,6 @@ require '../scripts/paths.php'
                             $pathChat = $path['chat'];
                             echo <<< HTML
                              <li class="header__list-item"><a href="$pathChat">Chat</a></li>
-HTML;
-                        }
-                        ?>
-
-                        <?php
-                        if ($_SESSION['logged user']->status == 'admin') {
-                            $pathAdmin = $path['adminPanel'];
-                            echo <<< HTML
-                             <li class="header__list-item"><a href="$pathAdmin">USERS</a></li>
 HTML;
                         }
                         ?>
@@ -78,39 +70,20 @@ HTML;
     </header>
 
 
-    <section class="chat">
-        <div class="container">
-            <h1 class="title">
-                Chat
-            </h1>
-            <div class="chat__wrapper">
-
-                <div class="chat__messages">
-
-                </div>
 
 
-                <div class="chat__triggers">
-                    <?php
-                    if (isset($_SESSION['logged user'])) {
-                        echo <<<HTML
-                            <input type="text" name="message" class="chat__input" placeholder="message">
-                            <button class="chat__button-send">Send</button>
-HTML;
-                    } else {
-                        echo <<<HTML
-                            <div class="error">You must be logged in to write a message</div>
-HTML;
-                    }
-                    ?>
 
-                </div>
-            </div>
+    <section class="dashboard">
+        <div class="container allUsers">
+            
         </div>
     </section>
 
+    
+                    
+
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="../js/chat.js"></script>
+    <script src="../js/adminPanel.js"></script>
 
 </body>
 

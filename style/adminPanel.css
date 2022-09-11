@@ -1,0 +1,16 @@
+.allUsers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.column-id {
+    color: rgb(160, 201, 251);
+}
+
+.removeUserButton {
+    background: none;
+    outline: none;
+    border: none;
+    color: #fff;
+}

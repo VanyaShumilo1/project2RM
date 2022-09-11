@@ -57,16 +57,16 @@ require '../scripts/paths.php'
             <form enctype="multipart/form-data" class="changePasswordForm">
 
                 <label for="popup__input-oldPassword" class="left">Current password</label>
-                <input type="password" class="popup__input popup__input-oldPassword" id="popup__input-oldPassword"> 
+                <input type="password" class="popup__input popup__input-oldPassword" id="popup__input-oldPassword">
 
                 <label for="popup__input-newPassword" class="left">New password</label>
                 <input type="password" class="popup__input popup__input-newPassword" id="popup__input-newPassword">
-                
+
                 <label for="popup__input-newConfirmPassword" class="left">Confirm new password</label>
                 <input type="password" class="popup__input popup__input-newConfirmPassword" id="popup__input-newConfirmPassword">
-                
+
                 <div class="errors"></div>
-                
+
                 <button type="button" class="button changePasswordSubmit">Change</button>
             </form>
         </div>
@@ -99,6 +99,14 @@ require '../scripts/paths.php'
                             $pathChat = $path['chat'];
                             echo <<< HTML
                              <li class="header__list-item"><a href="$pathChat">Chat</a></li>
+HTML;
+                        }
+                        ?>
+                        <?php
+                        if ($_SESSION['logged user']->status == 'admin') {
+                            $pathAdmin = $path['adminPanel'];
+                            echo <<< HTML
+                             <li class="header__list-item"><a href="$pathAdmin">USERS</a></li>
 HTML;
                         }
                         ?>
