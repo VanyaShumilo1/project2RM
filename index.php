@@ -39,6 +39,11 @@ require 'scripts/paths.php'
                         if (isset($_SESSION['logged user'])) {
                             echo <<< HTML
                              <li class="header__list-item"><a href="pages/chat.php">Chat</a></li>
+HTML;
+                        }
+                        
+                        if ($_SESSION['logged user']->status == 'admin') {
+                            echo <<< HTML
                              <li class="header__list-item"><a href="pages/addPost.php">Add post</a></li>
 HTML;
                         }
@@ -73,7 +78,7 @@ HTML;
     <section class="feed">
         <div class="container">
             <h1 class="title">Feed</h1>
-            <div class="feed__wrapper">                
+            <div class="feed__wrapper">
 
                 <div class="post">
                     <div class="post__header">

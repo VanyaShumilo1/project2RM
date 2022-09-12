@@ -1,7 +1,11 @@
 <?php
 
 require '../scripts/db.php';
-require '../scripts/paths.php'
+require '../scripts/paths.php';
+
+if ($_SESSION['logged user']->status != 'admin') {
+    header('Location: ../index.php');
+}
 
 ?>
 
@@ -20,7 +24,7 @@ require '../scripts/paths.php'
     <link rel="stylesheet" href="../style/mainPage.css">
     <link rel="stylesheet" href="../style/addPost.css">
 
-    <title>Chat</title>
+    <title>Add Post</title>
 </head>
 
 <body>

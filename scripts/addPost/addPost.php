@@ -12,9 +12,10 @@ $user = R::findOne('users', 'id = ?', array($id));
 if ($user) {
     $username = $user->username;
     $userPhoto = $user->photo;
+    $userStatus = $user->status;
 }
 
-if (isset($text)) {
+if (isset($text) && $userStatus == 'admin') {
     $posts = R::dispense('posts');
     $posts->time = $postTime;
     $posts->username = $username;

@@ -45,6 +45,7 @@ a {
 }
 
 .post{
+    position: relative;
     padding: 10px;
     max-width: 100%;
     display: flex;
@@ -52,6 +53,17 @@ a {
     gap: 15px;
     border: 2px solid rgb(136, 135, 135);
     border-radius: 10px;
+}
+
+.delete__post {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: #ff0000;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .post__userPhoto img{
