@@ -39,6 +39,7 @@ require 'scripts/paths.php'
                         if (isset($_SESSION['logged user'])) {
                             echo <<< HTML
                              <li class="header__list-item"><a href="pages/chat.php">Chat</a></li>
+                             <li class="header__list-item"><a href="pages/addPost.php">Add post</a></li>
 HTML;
                         }
                         ?>
@@ -72,31 +73,7 @@ HTML;
     <section class="feed">
         <div class="container">
             <h1 class="title">Feed</h1>
-            <div class="feed__wrapper">
-
-                <div class="post">
-                    <div class="post__header">
-                        <div class="post__userPhoto">PHOTO</div>
-                        <div class="post__username">USERNAME</div>
-                    </div>
-                    <div class="post__body">
-                        <div class="post__photo"></div>
-                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
-                    </div>
-                    <div class="post__footer"></div>
-                </div>
-
-                <div class="post">
-                    <div class="post__header">
-                        <div class="post__userPhoto">PHOTO</div>
-                        <div class="post__username">USERNAME</div>
-                    </div>
-                    <div class="post__body">
-                        <div class="post__photo"></div>
-                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
-                    </div>
-                    <div class="post__footer"></div>
-                </div>
+            <div class="feed__wrapper">                
 
                 <div class="post">
                     <div class="post__header">
@@ -105,22 +82,6 @@ HTML;
                     </div>
                     <div class="post__body">
                         <div class="post__photo">
-                            <img src="/media/audi.jpg" alt="">
-                        </div>
-                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
-                    </div>
-                    <div class="post__footer"></div>
-                </div>
-
-                <div class="post">
-                    <div class="post__header">
-                        <div class="post__userPhoto">PHOTO</div>
-                        <div class="post__username">USERNAME</div>
-                    </div>
-                    <div class="post__body">
-                        <div class="post__photo">
-
-
                             <div class="swiper">
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
@@ -136,27 +97,12 @@ HTML;
                                 <div class="swiper-button-prev"></div>
                                 <div class="swiper-button-next"></div>
                             </div>
-
-
-
-
                         </div>
                         <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
                     </div>
                     <div class="post__footer"></div>
                 </div>
 
-                <div class="post">
-                    <div class="post__header">
-                        <div class="post__userPhoto">PHOTO</div>
-                        <div class="post__username">USERNAME</div>
-                    </div>
-                    <div class="post__body">
-                        <div class="post__photo"></div>
-                        <div class="post__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi ullam similique qui asperiores quasi, dolorem iste possimus eligendi distinctio reiciendis aperiam? Iure itaque quia molestias ipsum rem sed deleniti sequi?</div>
-                    </div>
-                    <div class="post__footer"></div>
-                </div>
 
             </div>
         </div>
@@ -165,6 +111,7 @@ HTML;
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="/js/feed.js"></script>
+    <script src="/js/renderAllPosts.js"></script>
     <script src="js/slider.js"></script>
 </body>
 

@@ -4,9 +4,9 @@ require '../db.php';
 
 function savePhoto($photo)
 {
-    $fileName = $photo['name'];
+    $fileName = time() . $photo['name'];
     $fileTmp = $photo['tmp_name'];
-    
+
     $uploadFolder = '../../media/';
 
     $moveFile = move_uploaded_file($fileTmp, $uploadFolder . $fileName);

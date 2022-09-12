@@ -1,0 +1,46 @@
+.addPost {
+    margin-top: 30px;
+}
+
+.addPostForm {
+    width: 400px;
+}
+
+label,
+input,
+textarea,
+button {
+    display: block;
+    width: 100%;
+}
+
+.label {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.selectImages {
+    padding: 12px 0;
+    text-align: center;
+    border: 2px solid #4B72C2;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    transition: 0.5s all;
+    color: #fff;
+    display: inline-block;
+}
+
+textarea {
+    min-height: 250px;
+    background: none;
+    outline: none;
+    border: 2px solid #4B72C2;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.postImagesInput {
+    display: none;
+}
