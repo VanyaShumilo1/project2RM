@@ -28,7 +28,8 @@ $(document).ready(function () {
                 $('.feed__wrapper').append(
                     renderPost(post.user_photo, post.username, post.text, post.time)
                 )
-                // console.log(data.user_photo, data.username, data.text, data.time)
+                feedWrapper = document.querySelector('.feed__wrapper')
+                feedWrapper.scrollTop = feedWrapper.scrollHeight
                 
             }
             console.log(data)
