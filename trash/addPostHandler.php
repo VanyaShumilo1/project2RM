@@ -21,9 +21,12 @@ if (isset($text) && $userStatus == 'admin') {
     $posts->username = $username;
     $posts->userPhoto = $userPhoto;
     $posts->text = $text;
+    $posts->photos = $_POST[''];
     R::store($posts);
 }
 
 
 header('Content-Type: application/json; charset=utf-8');
 echo json_encode($posts);
+
+// var_dump($_POST);

@@ -27,38 +27,21 @@ $(document).ready(function () {
     $('.addPostForm').on('submit', function (e) {
         e.preventDefault()
 
-
-        let postImages = ''
-        let postText = []
-
-        // post images
-        // $.ajax({
-        //     url: '../scripts/addPost/getPostImages.php',
-        //     method: 'POST',
-        //     data: new FormData(this),
-        //     processData: false,
-        //     contentType: false,
-        //     cache: false,
-        //     success: function (data) {
-        //         for (i in data) {
-        //             let postImage = data[i];
-        //             postImages += postImage
-        //         }
-        //     }
-        // })
-
-
-        // post text
         $.ajax({
-            url: '../scripts/addPost/addPost.php',
+            url: '../scripts/addPost/addPostHandler.php',
             method: 'POST',
-            data: { 'postText': $('.postText').val() },
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
             cache: false,
             success: function (data) {
-                console.log(data.user_photo, data.username, data.text, data.time)
-                alert('created!')
+                console.log('success')
+                let photos = data.photos.split(',')
+                console.log(photos)
+                console.log(data)
             }
         })
+
 
     })
 })
