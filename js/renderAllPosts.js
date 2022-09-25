@@ -1,4 +1,13 @@
-function renderPost(userphoto, username, postText, time, id) {
+function renderPost(userphoto, username, postText, time, id, photos) {
+    
+    let photosHTML = ``;
+
+    photos.forEach(photo => {
+        photosHTML+= `<div class="swiper-slide"><img src="media/postsImages/${photo}" alt=""></div>`
+    });
+    
+    console.log(photosHTML)
+
     html = `
     
     <div class="post" data-id=${id}>
@@ -8,6 +17,25 @@ function renderPost(userphoto, username, postText, time, id) {
             <div class="post__username">${username}</div>
         </div>
         <div class="post__body">
+
+
+
+
+        <div class="post__photo">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    ${photosHTML}
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+
             <div class="post__text">${postText}</div>
         </div>
         <div class="post__footer">
@@ -17,6 +45,7 @@ function renderPost(userphoto, username, postText, time, id) {
     
     `
     return html
+    
 }
 
 $(document).ready(function () {
@@ -26,9 +55,10 @@ $(document).ready(function () {
         cache: false,
         success: function (data) {
             for (i in data) {
-                post = data[i]
+                let post = data[i]
+                let photos = post.photos.split(',')
                 $('.feed__wrapper').append(
-                    renderPost(post.user_photo, post.username, post.text, post.time, post.id)
+                    renderPost(post.user_photo, post.username, post.text, post.time, post.id, photos)
                 )
                 feedWrapper = document.querySelector('.feed__wrapper')
                 feedWrapper.scrollTop = feedWrapper.scrollHeight
