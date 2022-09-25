@@ -1,11 +1,11 @@
 function renderPost(userphoto, username, postText, time, id, photos) {
-    
+
     let photosHTML = ``;
 
     photos.forEach(photo => {
-        photosHTML+= `<div class="swiper-slide"><img src="media/postsImages/${photo}" alt=""></div>`
+        photosHTML += `<div class="swiper-slide"><img src="media/postsImages/${photo}" alt=""></div>`
     });
-    
+
     console.log(photosHTML)
 
     html = `
@@ -45,59 +45,75 @@ function renderPost(userphoto, username, postText, time, id, photos) {
     
     `
     return html
-    
+
 }
 
-$(document).ready(function () {
 
+$(document).ready(function () {
     $.ajax({
-        url: '/scripts/addPost/getAllPosts.php',
-        cache: false,
+        url: 'scripts/userData.php',
         success: function (data) {
-            for (i in data) {
-                let post = data[i]
-                let photos = post.photos.split(',')
-                $('.feed__wrapper').append(
-                    renderPost(post.user_photo, post.username, post.text, post.time, post.id, photos)
-                )
-                feedWrapper = document.querySelector('.feed__wrapper')
-                feedWrapper.scrollTop = feedWrapper.scrollHeight
+            if (data == 'userNotFound') {
+                const html = `
+                <div class="sign">
+                    <div class="sign__text">You must be logged in to watch post</div>
+                    <div class="sign__links">
+                        <a class="sign__link" href="pages/login.php">Log in</a>
+                        <a class="sign__link" href="pages/register.php">Registration</a>
+                    </div>
+                </div>
+                `
+                $('.feed__wrapper').html(html)
+            } else {
+
+                $.ajax({
+                    url: '/scripts/addPost/getAllPosts.php',
+                    cache: false,
+                    success: function (data) {
+                        for (i in data) {
+                            let post = data[i]
+                            let photos = post.photos.split(',')
+                            $('.feed__wrapper').append(
+                                renderPost(post.user_photo, post.username, post.text, post.time, post.id, photos)
+                            )
+                            feedWrapper = document.querySelector('.feed__wrapper')
+                            feedWrapper.scrollTop = feedWrapper.scrollHeight
+
+                        }
+                    }
+                }).done(function (data) {
+
+                    $.ajax({
+                        url: '/scripts/userData.php',
+                        success: function (data) {
+                            if (data.status == 'admin') {
+                                $('.delete__post').css('display', 'block')
+                            } else {
+                                $('.delete__post').css('display', 'none')
+                            }
+                        }
+                    })
+
+
+                    $('.delete__post').on('click', function () {
+                        let id = this.dataset.id
+                        $.ajax({
+                            url: '/scripts/addPost/removePost.php',
+                            data: { 'id': id },
+                            method: 'POST',
+                            success: function (data) {
+                                if (data == 'success') {
+                                    $(`.post[data-id=${id}]`).remove()
+                                } else {
+                                    alert(data)
+                                }
+                            }
+                        })
+                    })
+                })
+
 
             }
         }
-    }).done(function (data) {
-
-        $.ajax({
-            url: '/scripts/userData.php',
-            success: function (data) {
-                if (data.status == 'admin'){
-                    $('.delete__post').css('display', 'block')
-                } else {
-                    $('.delete__post').css('display', 'none') 
-                }
-            }
-        })
-
-
-
-        $('.delete__post').on('click', function () {
-            let id = this.dataset.id
-            $.ajax({
-                url: '/scripts/addPost/removePost.php',
-                data: { 'id': id },
-                method: 'POST',
-                success: function (data) {
-                    if (data == 'success') {
-                        $(`.post[data-id=${id}]`).remove()
-                    } else {
-                        alert(data)
-                    }
-                }
-            })
-        })
     })
-
-
-
-
 })
